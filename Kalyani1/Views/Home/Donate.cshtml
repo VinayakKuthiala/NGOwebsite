@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Donate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #DonateAmtBtn {
+        background: #f7ef00;
+        background-image: -webkit-linear-gradient(top, #f7ef00, #ffaa00);
+        background-image: -moz-linear-gradient(top, #f7ef00, #ffaa00);
+        background-image: -ms-linear-gradient(top, #f7ef00, #ffaa00);
+        background-image: -o-linear-gradient(top, #f7ef00, #ffaa00);
+        background-image: linear-gradient(to bottom, #f7ef00, #ffaa00);
+        -webkit-border-radius: 28px;
+        -moz-border-radius: 28px;
+        border-radius: 28px;
+        text-shadow: 4px 2px 11px #fafafa;
+        font-family: Arial;
+        color: #ff0000;
+        font-size: 30px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        float: left;
+    }
+
+        #DonateAmtBtn:hover {
+            background: #1bf7e1;
+            background-image: -webkit-linear-gradient(top, #1bf7e1, #25fa2c);
+            background-image: -moz-linear-gradient(top, #1bf7e1, #25fa2c);
+            background-image: -ms-linear-gradient(top, #1bf7e1, #25fa2c);
+            background-image: -o-linear-gradient(top, #1bf7e1, #25fa2c);
+            background-image: linear-gradient(to bottom, #1bf7e1, #25fa2c);
+            text-decoration: none;
+        }
+</style>
+        <body style="margin-top:100px; background-color:antiquewhite">
+   
+            <input type="button" value="Donate Rs. 10" onclick="location.href='@Url.Action("Donate", "Home")'" id="DonateAmtBtn">
+            <h2 style="text-align:right">Gau Maata Declines No Shagun</h2> <br /> 
+
+
+            <input type="button" value="Donate Rs. 100" onclick="location.href='@Url.Action("Donate", "Home")'" id="DonateAmtBtn">
+            <h2 style="text-align:right">Feed the Gau Dhan for a Day</h2style="text-align:right"> <br /> <br />
+
+        <input type="button" value="Donate Rs. 500" onclick="location.href='@Url.Action("Donate", "Home")'" id="DonateAmtBtn">
+        <h2 style="text-align:right">Feed the Gau Dhan for 5 Days</h2> <br /> <br />
+        
+
+        </body>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalyani1", "Kalyani1.csproj", "{AC13FF7E-7002-4210-A206-EB8BB94C4B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{83A69F2B-86D8-4648-916A-E44F6B14D4DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC13FF7E-7002-4210-A206-EB8BB94C4B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC13FF7E-7002-4210-A206-EB8BB94C4B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC13FF7E-7002-4210-A206-EB8BB94C4B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC13FF7E-7002-4210-A206-EB8BB94C4B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A69F2B-86D8-4648-916A-E44F6B14D4DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A69F2B-86D8-4648-916A-E44F6B14D4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A69F2B-86D8-4648-916A-E44F6B14D4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A69F2B-86D8-4648-916A-E44F6B14D4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {577DE392-1556-4A1E-9976-F5406FB93FE8}
+	EndGlobalSection
+EndGlobal

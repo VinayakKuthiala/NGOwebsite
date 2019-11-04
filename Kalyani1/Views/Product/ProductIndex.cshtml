@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Kalyani1.Models.ProductIndexModel>
+
+@{
+    ViewBag.Title = "CustomerIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top: 4%"></div>
+<h2>CustomerIndex</h2>
+
+<table class="table" name="prodTable" id="prodTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice) per kg/bottle
+        </th>
+        <th>
+            No. of units to be ordered
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th> Product Total</th>
+    </tr>
+
+
+    @{ int i = 1;}
+    @foreach (var item in Model)
+    {
+        string PtotAllocateId = "PTDP" + i;@*Stores id of html container where to display product totals*@
+        string UnitsOrderedAcceptId = "UO" + i; @*Stores id of the form input wherein units of specific type required are added*@
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td @*id="test"*@>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+
+                @*<form @*oninput="price.value =@Html.ValueFor(modelItem => item.UnitPrice) * parseInt(UnitsOrdered.value)" name="UnitsForm">
+                                        <input type="number" min="0" step="1" max="10" id= "@unitsOrderedId" value="0" onclick="ProductTotal()" />
+                    <br /> Product Total: <output name="price" for="Units ordered" value="0" id="tot"></output>
+                                    </form>
+                *@
+                <form name="UnitsForm1">
+                    <input type="number" min="0" step="1" max="10" id="@UnitsOrderedAcceptId" value="0" onchange="ProductTotal()" />
+                    @*@Html.TextBoxFor(modelItem => item.UnitsOrdered ,new { @id="txtid"+i ,@onchange = "ProductTotal();" });*@
+                </form>
+
+                <script>
+                        function ProductTotal()
+
+                        {
+                            //var UoI = "UnitsOrdered" + i;
+                            //alert(unitsOrderedId);
+                            //alert()
+                            if (ProductTotal.T == 'undefined') {
+                                ProductTotal.T = 0;
+                            }
+                           // var sum = document.getElementById("").value;
+                           // alert(sum);
+                            ProductTotal.T = @Html.ValueFor(modelItem => item.UnitPrice) * document.getElementById("@UnitsOrderedAcceptId").value;
+                            document.getElementById("@PtotAllocateId").innerHTML = ProductTotal.T;
+
+                        }
+                        //function TotalSum() //This approach is successful in creating static variables - but when combined with the 'output as product total- form', it only accounts for the first text box.
+                        //{
+                        //    if (TotalSum.total == 'undefined') {
+                        //        TotalSum.total = 0;
+                        //    }
+                        //    TotalSum.total += document.getElementById("tot").value;
+                        //    document.getElementById("totDisplay").innerHTML = TotalSum.total;
+
+                        //}
+
+                    </script>
+
+
+            </td>
+
+            <td>
+
+                @{
+                    var base64 = Convert.ToBase64String(item.Image);
+                    var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+                }
+                <img src="@imgsrc" style="height:6%; width: auto" />
+
+            </td>
+            <td>
+
+                <p id="@PtotAllocateId"></p>
+            </td>
+
+        </tr>
+        i++;
+    }
+
+
+</table>
+
+
+
+ @*OnClick Ye piece of code chale.*@    
+@{ int j = 1;}
+@foreach (var item1 in Model)
+{
+    string PtotDispId = "PTDP" + i; /*Same strings in different string names so as to refer to various ids created in the loop above*/
+    string UnitsOrderedDispId = "UO" + i;
+
+    /*Call ProductTotal function here. Should be invoked on on every iteration of the loop*/
+
+    @*<script>
+    function ProductTotal()
+    {
+        if (ProductTotal.T == 'undefined')
+        {
+            ProductTotal.T = 0;
+        }
+
+        ProductTotal.T = @Html.ValueFor(modelItem => item1.UnitPrice) * document.getElementById("@UnitsOrderedDispId").value;
+        document.getElementById("@PtotDispId").innerHTML = ProductTotal.T;
+
+    }
+    </script>*@
+
+
+
+
+
+}
+
+
+
+<p id="totDisplay">@*Insert order total value here*@ </p>
+<input type="button" value="Update Total" onclick="TotalSum()" />
+<input type="submit" value="Proceed To Customer Details" />
+
+
+
+
+
+
+
+@* Simple-Ghatiya tareeka to Display product costs upon entering of quantities.
+
+    <form oninput="Tprice.value =@Html.ValueFor(modelItem => item.UnitPrice) * parseInt(UnitsOrdered.value)" name="UnitsForm">
+        No. of items of each type ordered
+        @foreach (var item in Model)
+        {
+            <br />
+            @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.UnitPrice)
+
+            <input type="number" min="0" step="1" max="10" id="UnitsOrdered" name="UnitsOrdered" value="0" />
+
+            <br />
+
+        }
+        <output name="Tprice" for="Units ordered" value="0" id="tot"></output>
+    </form>*@

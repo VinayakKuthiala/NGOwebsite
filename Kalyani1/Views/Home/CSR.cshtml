@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "CSR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /*Defining Flip card properties. Source: https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+    .flip-card {
+        /*background-color: transparent;*/
+        width: 100%;
+        height: 350px;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: visible;
+    }
+
+    .flip-card-front {
+        background-color: #bbb;
+        color: #000;
+    }
+
+    .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    /*Class for Placing text onto Images*/
+    .bottom-left {
+        position: absolute;
+        bottom: 9%;
+        left: 6%;
+    }
+</style>
+
+<!--Creating flip cards reference: https://www.w3schools.com/howto/howto_css_flip_card.asp-->
+<div class="row" style="margin-top:3%">
+    <div class="col-md-6" @*style="float:left"*@>
+        <!--flip card 1-->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="~/Content/Images/CSR/SJVNL.jpeg" alt="Flip_Image" style="width:100%; height:100%">
+                    <div class="bottom-left"> <h1>SJVNL </h1> </div>
+                </div> <!--Yahaan flip-card-front ko band karna zaroori tha for the flip-card-back functioning to work as we want it to.-->
+                <div class="flip-card-back">
+                    <h1>In Collaboration with NHPC</h1>
+                    <p>We set up abc abc abc</p>
+                    <p>Aur kiya bhi abc abc abc</p>
+                    <p>(Maybe a View Photos option as well!)</p>
+                </div>
+                <!-- iss commented div mein aayega agar niche waala flip card b ek left ek right banaana ho - (to left waala yahaan)-->>
+                <!-- <div class="flip-card-front">
+                <!--aur phir ek div of flip-card-back yahaan, for the 3rd (in case of 4)
+             </div>-->
+            </div>
+        </div>
+    </div>
+    <!--Flip Card Row 1 Right Side -->
+    <div class="col-md-6" @*style="float:right"*@>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="~/Content/Images/CSR/NHPC.jpeg" alt="Flip_Image" style="width:100%; height:100%">
+                    <div class="bottom-left"> <h3>NHPC </h3> </div>
+                </div>
+                    <div class=" flip-card-back">
+                        <b>“Zero Budget Kheti” </b> is a CSR initiative of NHPC in collaboration with “Ram
+                        Kamal Charitable and Religious Trust” to promote the following:<br />
+                        1. To make the people of Himachal Pradesh aware about the advantages of
+                        domesticating the native cow (देसी गाय).<br />
+                        2. To make people adopt “Zero Budget Kheti” practices, which will increase
+                        the income of farmers.<br />
+                        3. To provide guidance and education to the native people that how they can
+                        generate an income source from products and by-products of the native
+                        cow.<br />
+                        4. To organise educational sessions and practical trainings by experts for
+                        production of agricultural, medicinal and other homely products from
+                        milk, ghee, lassi, cow dung & Gau Mutra.<br />
+                        5. To make efforts for making people to adopt natural ways of agricultural
+                        by replacing usage of chemical fertilizers with Beej Amrit (cow dung
+                        manure) and Ghan Amrit ( crop spray).<br />
+                        6. To make people adopt the naturopathy i.e panchgayva methodology to
+                        treat their ailments and make their immune system strong
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Expt. Flip Row 2 Complete-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    @*<img src="~/Content/Images/SliderImages/img3.jpg" alt="Flip_Image" style="width:100%; height:100%">*@
+                    <div class="bottom-left"> <h1>Upcoming:</h1> <h2>Ambuja Cement</h2> </div>
+                    <div class="flip-card-back">
+                        <ul>
+                            <li>Organizing of self-help groups for Cow Farming in rural regions </li>
+                            <li>Marketing of products produced by the self help groups</li>
+                            <li>Advancement into a functioning research center encompassing <i>swadesi</i> products and genetical variations derived off the Pahadi Cow.</li>
+                            <li>Setting up a pharmacy of products derived off Pahadi Cows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+            
+

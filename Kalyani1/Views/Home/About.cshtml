@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Ramkamal Charitable and Religious Trust - Trustees";
+}
+<section style="background-color:wheat; text-align:center">
+    <br />
+    <h1 style="font-size: xxx-large; color:orange"><b>@ViewBag.Title </b></h1>
+    <br />
+</section>
+
+<style>
+    /*ID for image manpulation. Refer this in id attribute for fixed size and hover effect*/
+    #TeamImg {
+        width: auto;
+        height: 280px;
+       /* isolation: isolate;*/
+        /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+        filter: gray; /* IE5+ */
+        -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+        -webkit-transition: all .8s ease-in-out;
+        
+        
+    }
+
+        #TeamImg:hover {
+            filter: none;
+            -webkit-filter: grayscale(0);
+            -webkit-transform: scale(1.01);
+        }
+</style>
+
+
+@*President*@
+<section>
+    <a href="https://www.facebook.com/rohitash.chander">
+        
+
+            <img id="TeamImg" src="~/Content/Images/Team/RohitashChander.jpg" alt="Facebook Profile_Sh. Rohitash Chander" style="float:left">
+    </a>
+    <div>
+        <h2>President</h2>
+        Sh. Rohitash Chander, The settlor of the trust once a renowned businessman in Shimla - has always been passionate about the rearing and conservation of cows. abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+        abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+    </div>
+    <br /><br /><br /><br /><br /><br />
+
+</section>
+
+
+@*Chairman*@
+<section style="background-color:aquamarine">
+    <a href="https://www.facebook.com/krishan.karol">
+
+
+        <img id="TeamImg" src="~/Content/Images/Team/KrishanKarol.jpg" alt="Facebook Profile_Sh. Rohitash Chander" style="float:right">
+    </a>
+    <div>
+        <h2>Chairman</h2>
+        Sh. Krishan Karol, abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+        abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+        abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+        <br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+
+</section>
+
+
+@*Vice-President*@
+<section>
+    <a href="https://www.facebook.com/rajeev.kuthiala.5">
+
+
+        <img id="TeamImg" src="~/Content/Images/Team/RajeevKuthiala.jpg" alt="Facebook Profile_Sh. Rohitash Chander" style="float:left">
+    </a>
+    <div>
+        <h2>Vice President</h2>
+        Sh. Rajeev Kuthiala, abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+        abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+        abc abc abc abc  abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc ababc abc abc abc  abc abc abc abc abc abc abc abc
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br/>
+
+
+@*General Secretary*@
+</section>
+<section style="background-color:aquamarine">
+    <a href="https://www.facebook.com/lakshayvrat">
+
+
+        <img id="TeamImg" src="~/Content/Images/Team/LakshayVrat.jpg" alt="Facebook Profile_Sh. Rohitash Chander" style="float:right">
+    </a>
+    <div>
+        <h2>General Secretary</h2>
+        <b>Sh. Lakshay Vrat</b> - A young and energetic sould mixed with the experience and guidance of the mentors above, he provides the youthful indulgence and vision that's necessary for any organization to move forth. Lakshay's zeal and zest are   
+        <br /><br /><br /><br /><br /><br />
+    </div>
+</section>
+
+<h3>@ViewBag.Message</h3>
+
+
+
+<p>&copy; @DateTime.Now.Year - Kalyani Gaushala, Khanlag, District Shimla, Himachal Prdaesh.</p>

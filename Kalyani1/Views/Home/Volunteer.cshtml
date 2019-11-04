@@ -1,0 +1,75 @@
+﻿@model DAL.Contact
+@{
+    ViewBag.Title = "Volunteer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Building a form references : https://www.w3schools.com/howto/howto_css_responsive_form.asp
+                                  https://www.w3schools.com/html/html_forms.asp -->
+
+<br />
+<h2>We appreciate your interest in Volunteering for Gau Seva</h2>
+<br />
+@*Agar Contact Model mein add karna ho to yahaan se *@
+@*@using (Html.BeginForm("SendEmail", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <h4>KaarSeva</h4>
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ContactNo, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ContactNo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Msg, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Msg, new { @class = "form-control" })
+        </div>
+     </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>*@
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.IsKaarSeva, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(m => m.IsKaarSeva, new { @class = "form-control" })
+        </div>*@
+
+
+
+
+
+
+
+}
+@*<legend><b> Kalyani KaarSeva </b> </legend>
+    <form name="KaarSeva" method="post" action="@Url.Action("SendEmail","Home")">
+
+        <label for="Name">Name</label>
+        <input type="text" name="Name" placeholder="Your Name" required><br /><br /><br />
+
+        <label for="EmailId">Email ID</label>
+        <input type="email" name="EmailId" placeholder="Your Email ID"> <br /><br /><br />
+
+        <label for="ContactNum"> Contact Number </label>
+        <input type="tel" name="ContactNum" placeholder="Your Contact Number" required> <br /><br /><br />
+
+        <input type="submit" value="Submit">
+
+    </form>*@

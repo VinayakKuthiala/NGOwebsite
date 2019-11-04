@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+
+<style>
+           .vertical-menu {
+           /* margin-left: 950px;*/
+            margin-top:0%;
+            float:right;
+            clear: none;
+            width:100%;
+            height:auto;
+            /*margin-right : 0px;*/
+            /*width: 300px;*/
+        }
+
+            .vertical-menu a {
+                /* float:right;
+                    clear:none;*/
+                background-image: url(../../Content/Images/img1.jpg);
+                background-color: aquamarine;
+                background-repeat: no-repeat;
+                background-size: 95% auto;
+                /*box-sizing: padding-box;*/
+               
+                
+                opacity: 0.8;
+                color: black;
+                display: block;
+                padding: 15%;
+                font: bolder 40px Arial;
+                text-decoration: none;
+                color: #fff;
+            }
+
+                .vertical-menu a:hover {
+                    background-color: darkturquoise;
+                    color:aquamarine;
+                    opacity: 1;
+                }
+
+                .vertical-menu a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+</style>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body style="background-color: #eee"> 
+    <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="20" style="background-color:#eee">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")" class="navbar-left"><img src="~/Content/Images/logo.jpeg" style="height:25%; width:30%"></a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Kalyani", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @*
+                <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Our Team", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>*@
+           @* Commenting out the Login option (Will be needed to include the buying option) (Abhi color white h isliye dikhega b ni)*@
+               @Html.Partial("_LoginPartial")
+        </div>
+            </div>
+    </div>
+    
+    <div class="row row-no-gutters">
+        
+        <div class="col-md-8">
+            @RenderBody()
+        </div>
+
+        <div class="col-md-4">
+            <!--<div class="container body-content">-->
+                
+                <!-- <a href="#" class="active">Home</a> -->
+
+            <div class="vertical-menu">
+                @*<li>*@
+                <a href="@Url.Action("GauDhan", "Home")" class="elements" style="background-image:url(../../Content/Images/SideBarImages/img1.JPG); ">
+                    <span>Gau Dhan</span>
+                </a>
+
+                @*</li>
+        <li>*@
+                <a href="@Url.Action("ProductIndex", "Product")" class="elements" style="background-image:url(../../Content/Images/SideBarImages/img1.JPG); ">
+                    <span>Swadesi Products</span>
+                </a>
+
+
+                <a href="@Url.Action("CSR", "Home")" class="elements" style="background-image:url(../../Content/Images/SideBarImages/img2.JPG); ">
+                    <span>CSR Avenues</span>
+                </a>
+                @*</li>
+
+        <li>*@
+                <a href="@Url.Action("Achievements", "Home")" class="elements" style="background-image:url(../../Content/Images/SideBarImages/img1.JPG); ">
+                    <span>Achievements</span>
+                </a>
+                @*</li>
+        <li>*@
+                <a href="@Url.Action("Activities", "Home")" class="elements" style="background-image:url(../../Content/Images/SideBarImages/img2.JPG); ">
+                    <span>Activities</span>
+                </a>
+                @*</li>*@
+            </div>
+
+            <!--</div>-->
+        </div>
+
+        <hr />
+
+
+        @*<footer>
+            <a href="https://www.facebook.com/Kalyani-Paharhi-Cow-Development-and-Research-Centre-571655426278323/">
+                <img src="~/Content/Images/fb.png" alt="Facebook Connect" style="width:100px;height:auto;border:0;">
+            </a>
+
+
+
+            <p>&copy; @DateTime.Now.Year - Kalyani Gaushala, Khanlag, District Shimla, Himachal Prdaesh.</p>
+
+        </footer>*@
+    </div>
+    
+
+    
+    <div class="row">
+        @*Bar1*@
+        <a href="@Url.Action("Donate", "Home")">
+            <div class="col-md-6" style="background-color:slategray; color:#fff; text-align:center; border-right:2px solid #fff">
+                <h1>DONATE</h1>
+                <p>Support us by making a Contribution. </p>
+            </div>
+        </a>
+        <a href="@Url.Action("Volunteer", "Home")">
+            <div class="col-md-6" style="background-color:slategray; color:#fff; text-align:center; border-left:2px solid #fff">
+                <h1>कार सेवा </h1>
+                <p>Get involved at a personal level.</p>
+            </div>
+        </a>
+        @*Bar2*@
+        <a href="@Url.Action("About", "Home")">
+            <div class="col-md-3" style="background-color: #222; color:#ccc; text-align:center; border-right:1px solid #fff; border-left:1px solid #fff">
+                <h3>Trustees</h3>
+            </div>
+        </a>
+        <a href="@Url.Action("Contact", "Home")">
+            <div class="col-md-3" style="background-color: #222; text-align:center; color:#ccc;  border-right:1px solid #fff; border-left:1px solid #fff">
+                <h3>Contact Us</h3>
+            </div>
+        </a>
+        <a href="@Url.Action("About", "Home")">
+            <div class="col-md-3" style="background-color: #222; color:#ccc; text-align:center; border-right:1px solid #fff; border-left:1px solid #fff">
+                <h3>Trustees</h3>
+            </div>
+        </a>
+        <a href="@Url.Action("Contact", "Home")">
+            <div class="col-md-3" style="background-color: #222; text-align:center; color:#ccc;  border-right:1px solid #fff; border-left:1px solid #fff">
+                <h3>Contact Us</h3>
+            </div>
+        </a>
+        <footer style="background-color:#000">
+            <a href="https://www.facebook.com/Kalyani-Paharhi-Cow-Development-and-Research-Centre-571655426278323/">
+                <img src="~/Content/Images/fb.png" alt="Facebook Connect" style="width:auto;height:auto;border:0;">
+            </a>
+
+
+
+            <p style="color:#ddd">&copy; @DateTime.Now.Year - Kalyani Gaushala, Khanlag, District Shimla, Himachal Prdaesh.</p>
+
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DAL.Product>
+
+@{
+    ViewBag.Title = "ProductIndexV3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-top: 4%"></div>
+<h2>ProductIndexV3</h2>
+
+<table class="table" name="prodTable" id="prodTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            No. of units to be ordered
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th> Total till here</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitPrice) (per kg/bottle)
+    </td>
+    <td>
+        <input type="number" min="0" id="@item.Id" onchange="javascript:inputChanged(this,@item.UnitPrice);" step="1" max="10" id="test" value="0" />
+    </td>
+    
+    <td>
+
+        @{
+            var base64 = Convert.ToBase64String(item.Image);
+            var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+        }
+        <img src="@imgsrc" style="height:6%; width: auto" />   
+    </td>
+    <td id="total_@item.Id" class="Ptotal">Display Product total here.</td>
+</tr>
+    }
+</table>
+
+<input type="button" onclick="javascript:TotalSum()" value="Calculate Total"/>
+
+<h2> Order Total: Display Order Total here </h2>
+<p id="test"> </p>
+<script>
+    function inputChanged(input, unitPrice) {
+        document.getElementById('total_' + input.id).innerHTML = input.value * unitPrice;
+        }
+    function TotalSum() {
+        document.getElementById("test").innerHTML = document.getElementsByClassName("Ptotal").value;
+    }
+
+</script>

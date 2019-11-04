@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--<script type="text/javascript">
+
+
+    </script>-->
+<style>
+    #SliderImg{
+        width: 100%;
+        height: 55.6%;
+    }
+</style>
+
+<div style="background-color:#fff">
+    <div style="margin-left:0.5%;">
+        <section style="text-align:center; width:100%">
+            <br />
+            <h1 style="font-weight:600; color:orangered; text-shadow: -1px 0 white, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; font-size:xxx-large"> कल्याणी - पहाड़ी गाय विकास एवं अनुसंधान केंद्र </h1>
+            <h3 style="color:darkorange">  </h3>
+            <br />
+
+
+        </section>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style=" width : 100%; position: relative; float:left; clear:none">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style=" width : 100%; position: relative; float: left; clear:none">
+                @* //Experimenting picking as many files as in the folder and then displaying those in the slider.
+                    A loop remains to be implemented even if this works. Source: https://stackoverflow.com/questions/2242564/file-count-from-a-folder//
+                    @{int fCount = Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly).Length; }*@
+
+
+                <div class="item active">
+                    <img src="~/Content/Images/SliderImages/img1.jpg" alt="Image_Kalyani Gaushala" id="SliderImg">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/Images/SliderImages/img2.JPG" alt="Image_Kalyani Gaushala" id="SliderImg">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/Images/SliderImages/img3.JPG" alt="Image_Kalyani Gaushala" id="SliderImg">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+        <style> 
+            /*Button Id for buttons similar to Donate*/
+            #DonateBtn { 
+                background: #f7ef00;
+                background-image: -webkit-linear-gradient(top, #f7ef00, #ffaa00);
+                background-image: -moz-linear-gradient(top, #f7ef00, #ffaa00);
+                background-image: -ms-linear-gradient(top, #f7ef00, #ffaa00);
+                background-image: -o-linear-gradient(top, #f7ef00, #ffaa00);
+                background-image: linear-gradient(to bottom, #f7ef00, #ffaa00);
+                -webkit-border-radius: 28;
+                -moz-border-radius: 28;
+                border-radius: 28px;
+                text-shadow: 4px 2px 11px #fafafa;
+                font-family: Arial;
+                color: #ff0000;
+                font-size: 60px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+            }
+
+                #DonateBtn:hover {
+                    background: #1bf7e1;
+                    background-image: -webkit-linear-gradient(top, #1bf7e1, #25fa2c);
+                    background-image: -moz-linear-gradient(top, #1bf7e1, #25fa2c);
+                    background-image: -ms-linear-gradient(top, #1bf7e1, #25fa2c);
+                    background-image: -o-linear-gradient(top, #1bf7e1, #25fa2c);
+                    background-image: linear-gradient(to bottom, #1bf7e1, #25fa2c);
+                    text-decoration: none;
+                }
+            /*#MenuImg{
+                    width:300px;
+                    height:250px;
+                    -webkit-transition: all .8s ease-in-out;
+                }*/
+
+            /* right side waale image menu ki class*/
+
+            /*Commenting for the purpose of experimenting to take this to the Layout*/
+            /*.vertical-menu {
+                    margin-left: 950px;
+                    /*margin-right :10px;*/
+            /*width: 300px;
+                }*/
+
+            /*.vertical-menu a {
+                        background-image: url(../../Content/Images/img1.jpg);
+                        background-color: aquamarine;
+                        background-repeat: no-repeat;
+                        background-size: 295px 190px;
+                        box-sizing: padding-box;
+                        opacity: 0.8;
+                        color: black;
+                        display: block;
+                        padding: 65px;
+                        font: bolder 40px Arial;
+                        font-size: 30px;
+                        text-decoration: none;
+                        color: #ffffff;
+                    }
+
+                        .vertical-menu a:hover {
+                            background-color: #e3f705;
+                            opacity: 1;
+                        }
+
+                        .vertical-menu a.active {
+                            background-color: #4CAF50;
+                            color: white;
+                        } Experiment Comment Close*/
+        </style>
+        <!--<div class="vertical-menu">  //Expt. line Commented
+            <!-- <a href="#" class="active">Home</a> -->
+       
+        @* <li>
+                    <a href="@Url.Action("GauDhan", "Home")" class="elements">
+                        <span>Gau Dhan</span>
+                    </a>
+                    <a href="@Url.Action("CSR", "Home")" class="elements">
+                        <span>CSR Avenues</span>
+                    </a>
+                    <a href="@Url.Action("Achievements", "Home")" class="elements" style="background-image:url(../../Content/Images/img3.JPG); ">
+                        <span>Achievements</span>
+                    </a>
+                    <a href="@Url.Action("Contact", "Home")" class="elements">
+                        <span>Workshops</span>
+                    </a>
+
+
+                </li>
+
+        
+
+            </div>*@
+
+        <!--Donate Button-->
+        @*<input type="button" value="Donate" onclick="location.href='@Url.Action("Donate", "Home")'" id="DonateBtn">*@
+
+        <br /><br />
+        <section style="background-color:aliceblue; margin-right: 100px">
+            <br />
+            <p style="color:orange; font-size:medium ">
+                <br />
+                कल्याणी गौशाला का संस्थापन वर्ष 2012 में पहाड़ी गायों की स्थिति को दयनीय से सराहनीय करने के लक्ष्य से हुआ।<br /><br />
+                गौ माता की असीम कृपा से एवं संस्था अध्यक्ष श्री रोहिताश चंद्र की रहनुमाई में संस्था के प्रयत्न अत्यंत दिषामय व सफल होते गए व आज पहाड़ी गौओं के प्रति समर्पित देश की यह प्रथम व एकमात्र गौशाला अपने करकमलों द्वारा गौ माता को उनके सुनिश्चित मक़ाम की तरफ ले जाने के लिए कर्मबध है। <br />
+            </p>
+            <br />
+
+
+        </section>
+    </div>
+
+
+</div>

@@ -1,0 +1,195 @@
+﻿
+@{
+    ViewBag.Title = "Activities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+        /*Defining Flip card properties. Source: https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+        .flip-card {
+            /*background-color: transparent;*/
+            width: 100%;
+            height: 750px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: #000;
+            opacity: 0.8;
+        }
+
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+            
+        }
+
+        /*Class for Placing text onto Images*/
+        .bottom-left {
+            position: absolute;
+            bottom: 5%;
+            left: 4%;
+        }
+
+    </style>
+
+<div class="row row-no-gutters" style="margin-top: 2%">
+    <div class="col-md-4" @*style="float:left"*@>
+        <!--flip card 1-->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-color:orangered; background-image: linear-gradient(to bottom right, orangered, white)">
+                    @*<img src="~/Content/Images/CSR/SJVNL.jpeg" alt="Flip_Image" style="width:100%; height:100%">*@
+                    <div class="bottom-left"> <h1 ><b>Social </b></h1> </div>
+                </div> <!--Yahaan flip-card-front ko band karna zaroori tha for the flip-card-back functioning to work as we want it to.-->
+                <div class="flip-card-back">
+                    <h1 style="text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;"><b>Our Social Efforts:</b></h1>
+                    <br /><br /><br />
+                                <ol>
+                                    <p>
+                                    <li> <b>Conservation</b> of Native Cow</li></p>
+                                    <br />
+                                    <p>
+                                    <li>Organization of Health Relief Camps</li></p>
+                                    <br />
+                                    <p>
+                                    <li><b>Imparting knowledge </b> on organic farming and benefits of domestication of Pahadi Cow</li></p>
+                                    <br />
+                                    <p>
+                                    <li> <b>Protection and Conservation of Environment </b>- Plantation Activities & Natural Water Resources Maintenance</li></p>
+                                    <br />
+                                    <p>
+                                    <li> <b>Roti Seva </b>- Hosting <i>bhandaaras</i> from time to time</li></p>
+                                    <br />
+                                    <p>
+                                    <li> Organizing Gau Daan and Gau Pooja</li></p>
+                                    <br />
+                                    <p>
+                                    <li><i>Kaar Seva</i></li></p>
+                                    <br />
+                                    <p>
+                                    <li> Serving better & healthier A2 milk to the general public</li></p>
+                                    <br />
+                                    <p>
+                                    <li> Celebrated Holi alongside the residents of <i>Kanya Ashram</i> </li></p>
+                                </ol>
+                </div> 
+                <!-- iss commented div mein aayega agar niche waala flip card b ek left ek right banaana ho - (to left waala yahaan)-->>
+                <!-- <div class="flip-card-front">
+                   <!--aur phir ek div of flip-card-back yahaan, for the 3rd (in case of 4)
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-color:yellow; background-image: linear-gradient(to bottom right, yellow, white)">
+                    <div class="bottom-left"> <h1><b>Research </b></h1> </div>
+                </div>
+                <div class="flip-card-back">
+                    <h1 style="text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;"><b>Efforts directed towards Knowledge & Research:</b></h1>
+                    <br /><br /><br />
+                                <ol>
+                                    <p><li> Development of superior species of Cows. </li></p>
+                                    <br />
+                                    <p><li> Research on improving the milk produce of the Native Cow. </li></p>
+                                    <br />
+                                    <p><li> Certified Verification of the milk yield type and quality.</li></p>
+                                    <br />
+                                    <p><li> Attending seminar on <i>Gau Vansh</i> and <i>GauShala</i> at Vigyan Bhavan, New Delhi.</li></p>
+                                    <br />
+                                    <p><li> Experimentation on the process of drying fodder.</li></p>
+                                    <br />
+                                    <p><li> Attending seminar on Health and Medicinal Plants (alongside members of Arogya Bharti) at Chandigarh University.</li></p>
+                                    <br />
+                                    <p><li> Preparation of <i>Ajhola</i> fodder.</li></p>
+                                </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" style="background-color:lawngreen; background-image: linear-gradient(to bottom right, lawngreen, white)">
+                    <div class="bottom-left"> <h1><b>Trainings & Workshops </b></h1> </div>
+                </div>
+                <div class="flip-card-back">
+                    <h1 style="text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;"><b>Our Trainings and Workshops</b></h1>
+                    
+                                <ol>
+                                    <p><b>
+                                    <li>Imparting knowledge to the common folk about the native species and its benefits</li>
+                                    </b></p>
+                                    <b>Venue:</b> Sunni Gaushaala __
+                                    <b>Date:</b> 18 Sept, '13
+                                    <p><b>
+                                    <li>Members' training in relation to protection of cows, preparation of <i>panchgavya</i> and vermi-compost</li>
+                                    </b></p>
+                                    <b>Venue:</b> Ramshehar, Nalagarh __
+                                    <b>Date:</b> 20 Jan, '14
+                                    <p><b>
+                                    <li>Members' training about dairy products, breeds of Cow, and modern dairy technology</li>
+                                    </b></p>
+                                    <b>Venue:</b> Ramshehar, Nalagarh __
+                                    <b>Date:</b> 20 Jan, '14
+                                    <p><b>
+                                    <li>Members' participation in multiple training sessions organised by National Institute of Animal Welfare</li>
+                                    </b></p>
+                                    <b>Venue:</b> Faridabad (NCR)__
+                                    <b>Dates:</b> 10 Aug,'16 & 1 Mar,'17; 12-19 Apr, '17 (President's training)
+                                    <p><b>
+                                    <li>Imparting knowledge to National and State level Kisaan leaders</li>
+                                    </b></p>
+                                    <b>Venue:</b> Kalyani Gaushala __
+                                    <b>Date:</b> 12 Aug, '17
+                                    <p><b>
+                                    <li>Attending a 6 day course on Farm Nutrition & Welfare under the flagship of GIAN programme</li>
+                                    </b></p>
+                                    <b>Venue:</b> JwaharLal Nehru University, Delhi__
+                                    <b>Date:</b> 11-16 Sept, '17
+                                    <p><b>
+                                    <li>Workshops on 'Zero Budget Kheti'</li>
+                                    </b></p>
+                                    <b>Venue:</b> Kalyani Gaushala__
+                                    <b>Dates:</b> 16-17 Nov, '18; 30-31 Dec, '18; 16-17 Feb, '19; 16-17 Mar, '19
+
+
+
+
+
+
+
+                                </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+
